@@ -1,0 +1,23 @@
+@use "vars" as *;
+
+.top-mv{
+	background: url("../img/top/bg-mv.png")no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
+	@include flex(0,center,wrap);
+}
+.mv-block{
+	&__logo{
+		display: block;
+		@include font-size(234);
+		font-weight: bold;
+		line-height: 1;
+	}
+	&__ttl{
+		display: block;
+		@include font-size(42);
+		font-weight: bold;
+		margin-bottom: 23px;
+	}
+}

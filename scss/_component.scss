@@ -1,0 +1,92 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+	&--green{
+		color: $green !important;
+	}
+}
+
+
+
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+
+	}
+
+}
+
+//btn
+.c-btn{
+	&__01{
+		width: 100%;
+		max-width: 303px;
+		height: 54px;
+		@include flex(center,center,wrap);
+		background: $orange;
+		line-height: 1;
+		@include font-size(24);
+		font-weight: bold;
+		color: $dark;
+		border-radius: 5px;
+	}
+}
+
