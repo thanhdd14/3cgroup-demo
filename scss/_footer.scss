@@ -2,15 +2,144 @@
 
 #footer{
 	background: #f4f4f4;
-	padding: 100px 0;
+	padding: 120px 0;
+	color: #828181;
+	@include font-size(14);
+	@include mq(){
+		padding: 40px 0;
+	}
+	a{
+		color: #828181;
+	}
 	.footer-block{
 		@include flex(0,0,wrap);
+		margin-bottom: 80px;
+		@include mq(){
+			margin-bottom: 0;
+		}
 	}
 	.footer-logo{
 		display: block;
 		width: 308px;
+		@include mq(){
+			width: 151px;
+			margin-bottom: 30px;
+		}
 	}
 	.footer-ct{
 		width: calc(100% - 308px);
+		@include flex(0,0,wrap);
+		padding: 0 0 0 12%;
+		@include mq(){
+			width: 100%;
+			padding: 0;
+		}
+		&__item{
+			width: 25%;
+			@include mq(){
+				width: 100%;
+			}
+		}
+		&__ttl{
+			display: block;
+			@include font-size(18);
+			font-weight: 500;
+			position: relative;
+			margin-bottom: 6px;
+			@include mq(md-min){
+				pointer-events: none;
+			}
+			@include mq(){
+				&:after{
+					content: "";
+					border: solid #828181;
+					border-width: 0 1px 1px 0;
+					display: inline-block;
+					padding: 3px;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+					position: absolute;
+					top: 7px;
+					right: 0;
+				}
+				&.active{
+					&:after{
+						border: solid #828181;
+						border-width: 0 1px 1px 0;
+						-webkit-transform: rotate(-135deg);
+						-ms-transform: rotate(-135deg);
+						transform: rotate(-135deg);
+						top: 10px;
+					}
+				}
+			}
+		}
+		ul{
+			@include mq(){
+				display: none;
+				margin-bottom: 10px;
+			}
+			li{
+				margin-bottom: 5px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.footer-note{
+		@include flex(between,center,wrap);
+		border-top: 1px solid #C6C6C6;
+		padding: 42px 0 0;
+		@include mq(){
+			border-top: none;
+			display: block;
+		}
+		&--left{
+			@include flex(end,center,wrap);
+			@include mq(){
+				display: block;
+			}
+		}
+		&__copyright{
+			margin-right: 58px;
+			@include mq(){
+				margin: 0 0 10px;
+			}
+		}
+		&__menu{
+			@include flex(0,0,wrap);
+			@include mq(){
+				display: block;
+				margin-bottom: 30px;
+			}
+			li{
+				margin-right: 40px;
+				@include mq(){
+					margin: 0 0 10px 0;
+				}
+				&:last-child{
+					margin: 0;
+				}
+			}
+		}
+		&__sns{
+			@include flex(end,center,wrap);
+			@include mq(){
+				justify-content: flex-start;
+			}
+			li{
+				margin-right: 15px;
+				&:last-child{
+					margin-right: 0;
+				}
+				a{
+					img{
+						width: 24px;
+					}
+				}
+			}
+		}
 	}
 }

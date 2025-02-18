@@ -59,7 +59,7 @@ Component
 // Common Text style
 .c-txt{
 	&__basic{
-
+		@include fts(18,24);
 	}
 }
 
@@ -69,7 +69,28 @@ Component
 //ttl
 .c-ttl{
 	&__01{
+		display: block;
+		@include font-size(32);
+		font-weight: bold;
+		line-height: 1.4;
+		margin-bottom: 30px;
+		@include mq(){
+			@include font-size(18);
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+	}
 
+	&__03{
+		text-align: center;
+		@include fts(32,38);
+		font-weight: 700;
+		margin-bottom: 56px;
+		span{
+			@include fts(42,48);
+			display: block;
+			color: $green;
+		}
 	}
 
 }
@@ -87,6 +108,20 @@ Component
 		font-weight: bold;
 		color: $dark;
 		border-radius: 5px;
+		@include mq(){
+			@include font-size(18);
+			max-width: 186px;
+			height: 35px;
+		}
 	}
 }
-
+.view-more{
+	display: inline-block;
+	border: 1px solid #C6C6C6;
+	border-radius: 30px;
+	@include font-size(18);
+	color: #828181;
+	line-height: 1;
+	font-weight: 500;
+	padding: 8px 23px;
+}
