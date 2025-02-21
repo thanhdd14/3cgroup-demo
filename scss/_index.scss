@@ -149,8 +149,10 @@
 		color: #797978;
 		@include mq(){
 			@include fts(14,20);
-			padding: 20px 12%;
+			padding: 20px 10%;
 			margin-bottom: 20px;
+		}
+		@include mq(sm){
 			&:last-child{
 				margin-bottom: 0;
 			}

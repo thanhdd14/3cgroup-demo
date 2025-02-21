@@ -1,0 +1,112 @@
+@use "vars" as *;
+
+.company-mv{
+	margin-bottom: 98px;
+	@include mq{
+		margin-bottom: 66px
+	}
+	&__ttl{
+		@include font-size(32);
+		font-weight: 700;
+		position: absolute;
+		top: 24%;
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 1418px;
+		padding: 0 15px;
+		width: 100%;
+		margin: 0 auto;
+		@include mq{
+			@include font-size(18);
+			padding: 0 27px;
+			top: 16%;
+		}
+		span{
+			@include font-size(54);
+			color: $green;
+			display: block;
+			line-height: 1.1;
+			@include mq{
+				@include font-size(24);
+				margin-top: 10px;
+				line-height: 1.2;
+			}
+		}
+	}
+}
+
+.company-values{
+	.c-ttl__03{
+		text-align: left;
+		margin-bottom: 30px;
+		@include mq{
+			padding: 0 20px;
+			margin-bottom: 18px;
+			position: relative;
+			left: -12px;
+			span{
+				margin-top: 20px;
+			}
+		}
+	}
+	&__img{
+		margin-top: -6.5%;
+		width: 92%;
+		margin-left: auto;
+	}
+	&__list{
+		@include mq(md-min){
+			display: none;
+		}
+		@include mq{
+			margin-top: 36px;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		@include mq(sm){
+			display: block;
+		}
+		&-item{
+			@include mq{
+				&:nth-child(5), &:nth-child(6){
+					position: relative;
+					left: 50%;
+				}
+			}
+			@include mq(sm){
+				max-width: 292px;
+				margin: 0 auto 16px;
+				&:nth-child(5), &:nth-child(6){
+					left: 0;
+				}
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+#page-company{
+	.top-about{
+		padding-bottom: 137px;
+		@include mq(){
+			padding: 63px 0;
+			.inner{
+				padding: 0 20px;
+			}
+		}
+		.heading-note{
+			margin-bottom: 56px;
+			@include mq{
+				margin-bottom: 35px;
+			}
+			.c-ttl__01{
+				margin-bottom: 18px;
+				@include mq{
+					margin-bottom: 9px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+@use "vars" as *;
+
+@include mq(){
+	#page-product {
+		padding-top: 72px;
+	}
+}
+.sec-product{
+	padding: 50px 0 100px;
+	@include mq(){
+		padding: 0 0 50px;
+	}
+}
+
+.product-note{
+	@include fts(32,38);
+	font-weight: bold;
+	color: $green;
+	margin-bottom: 30px;
+	@include mq(){
+		margin-bottom: 50px;
+	}
+}
+.product-list{
+	@include flex(0,0,wrap);
+	margin: 0 -15px;
+	&__item{
+		width: 50%;
+		padding: 0 15px;
+		@include mq(){
+			width: 100%;
+			margin-bottom: 20px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		a{
+			display: block;
+			border-radius: 24px;
+			overflow: hidden;
+			position: relative;
+		}
+	}
+	&__img{
+		position: relative;
+		&:before{
+			content: "";
+			display: block;
+			padding: 75.7% 0 0;
+			@include mq(sm){
+				padding: 100% 0 0;
+			}
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: url("../img/product/bg-item.png")no-repeat;
+			background-size: cover;
+			background-position: bottom center;
+		}
+		img{
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include ob;
+		}
+	}
+	&__ct{
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 3;
+		color: white;
+		text-align: center;
+		padding: 15px 15px 30px;
+		&-ttl{
+			display: block;
+			text-transform: uppercase;
+			@include fts(32,38);
+			font-weight: bold;
+		}
+	}
+}

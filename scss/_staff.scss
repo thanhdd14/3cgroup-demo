@@ -1,0 +1,168 @@
+@use "vars" as *;
+
+.sec-staff{
+	padding: 150px 0 100px;
+	@include mq(){
+		padding: 90px 0;
+	}
+}
+
+.staff-heading{
+	@include flex(end,0,wrap);
+	position: relative;
+	margin-bottom: 100px;
+	@include mq(){
+		margin-bottom: 60px;
+	}
+	&__img{
+		width: 74.6%;
+		border-radius: 24px;
+		overflow: hidden;
+		@include mq(){
+			width: 100%;
+		}
+	}
+	&__ct{
+		max-width: 940px;
+		position: absolute;
+		bottom: 50px;
+		left: 0;
+		background: $green;
+		color: white;
+		@include fts(42,48);
+		font-weight: bold;
+		border-radius: 24px;
+		padding: 30px 30px;
+		@include mq(){
+			position: static;
+			@include fts(32,38);
+			margin: -70px 22px 0;
+			padding: 30px 37px;
+		}
+		&-ttl{
+			display: block;
+			@include font-size(54);
+			font-weight: bold;
+			margin-bottom: 10px;
+			@include mq(){
+				@include fts(32,38);
+				margin-bottom: 0;
+			}
+		}
+		p{
+			margin-bottom: 15px;
+		}
+		a{
+			display: inline-block;
+			color: white;
+			@include font-size(24);
+			position: relative;
+			padding: 0 24px 0 0;
+			@include mq(){
+				@include font-size(18);
+				font-weight: 500;
+				padding: 0 35px 0 0;
+			}
+			&:after{
+				content: "";
+				border: solid white;
+				border-width: 0 2px 2px 0;
+				display: inline-block;
+				padding: 5px;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				position: absolute;
+				top: 7px;
+				right: 0;
+				@include mq(){
+					top: 15px;
+				}
+			}
+		}
+	}
+}
+.staff-note{
+	@include fts(42,48);
+	color: $green;
+	font-weight: bold;
+	margin-bottom: 50px;
+	@include mq(){
+		@include fts(24,30);
+		margin-bottom: 30px;
+	}
+	&__ttl{
+		display: block;
+		@include font-size(32);
+		color: #303030;
+		font-weight: bold;
+		margin-bottom: 15px;
+		@include mq(){
+			@include font-size(18);
+			font-weight: 500;
+		}
+	}
+}
+
+.staff-list{
+	@include flex(0,0,wrap);
+	margin: 0 -10px;
+	&__item{
+		width: 33.333%;
+		padding: 0 10px;
+		margin-bottom: 20px;
+		@include mq(lg){
+			width: 50%;
+		}
+		@include mq(sm){
+			width: 100%;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__img{
+		position: relative;
+		border-radius: 24px;
+		overflow: hidden;
+		&:before{
+			content: "";
+			display: block;
+			padding: 93% 0 0;
+		}
+		img{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include ob;
+		}
+	}
+	&__ct{
+		text-align: center;
+		@include font-size(18);
+		line-height: 1.6;
+		font-weight: 500;
+		margin: -10px 10px 0;
+		border: 1px solid #D9D9D9;
+		border-top: none;
+		border-radius: 0 0 24px 24px;
+		padding: 30px 15px;
+		@include mq(){
+			@include font-size(12);
+			margin: -25px 0 0;
+			padding: 40px 15px 20px;
+		}
+		&-ttl{
+			display: block;
+			color: $green;
+			@include font-size(32);
+			font-weight: bold;
+			@include mq(){
+				@include font-size(24);
+			}
+		}
+	}
+}

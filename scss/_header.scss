@@ -57,7 +57,7 @@
 			top: -100px;
 			left: 0;
 			right: 0;
-			height: 100px;
+			height: 80px;
 			z-index: 9999;
 			padding: 0 15px;
 			background: white;
@@ -68,7 +68,10 @@
 				padding: 0 50px 0 15px;
 			}
 			&.active{
-				top: 0;
+				top: 90px;
+				@include mq(tb){
+					top: 70px;
+				}
 			}
 		}
 		&__box{
@@ -214,6 +217,10 @@
 		}
 	}
 	.header-nav{
+		@include mq(tb-min){
+			display: block !important;
+			opacity: 1 !important;
+		}
 		@include mq(tb){
 			display: none;
 			position: absolute;
@@ -244,10 +251,29 @@
 					font-weight: 500;
 					color: #828181;
 					padding: 37px 25px;
+					position: relative;
 					@include mq(tb){
 						text-align: right;
-						position: relative;
+
 						padding: 10px;
+					}
+					@include mq(tb-min){
+						&:before {
+							position: absolute;
+							@include smooth-transition;
+							content: '';
+							width: 0;
+							left: 50%;
+							bottom: 25px;
+							height: 2px;
+							background: $green;
+						}
+						&:hover, &.active {
+							&:before {
+								width: 100%;
+								left: 0;
+							}
+						}
 					}
 				}
 				.header-nav__menu-has{
@@ -314,7 +340,9 @@
 			padding: 15px ;
 			min-width: 200px;
 			display: none;
+			border-radius: 10px;
 			@include mq(){
+				border-radius: 0;
 				position: static;
 				border: none;
 				text-align: right;

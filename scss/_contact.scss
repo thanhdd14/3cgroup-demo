@@ -1,0 +1,152 @@
+@use 'vars' as *;
+
+.contact-page{
+	background: $green;
+	padding: 80px 0;
+	color: #fff;
+	@include mq{
+		padding: 45px 0;
+	}
+	&__wrapper{
+		@include flex(between,center,wrap);
+		@include mq(tb){
+			max-width: 560px;
+			margin: 0 auto;
+		}
+	}
+	&__ttl{
+		@include font-size(70);
+		margin-bottom: 40px;
+		font-weight: 700;
+		@include mq(tb){
+			@include font-size(55);
+		}
+		@include mq{
+			@include font-size(42);
+			margin-bottom: 20px;
+		}
+	}
+	&__txt-company{
+		@include font-size(32);
+		font-weight: 700;
+		margin-bottom: 30px;
+		@include mq{
+			@include font-size(24);
+		}
+	}
+	&__infor{
+		margin-bottom: 40px;
+		@include mq{
+			padding-right: 60px;
+			margin-bottom: 20px;
+		}
+		li{
+			margin-bottom: 12px;
+			position: relative;
+			padding-left: 30px;
+			a{
+				color: #fff;
+			}
+			@include p-before(18px, 20px){
+				top: 2px;
+				left: 0;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+			&:nth-child(1){
+				&::before{
+					background: url(../img/contact/ico-map.png) no-repeat center/100%;
+					top: 5px;
+				}
+			}
+			&:nth-child(2){
+				&::before{
+					width: 22px;
+					height: 22px;
+					background: url(../img/contact/ico-phone.png) no-repeat center/100%;
+				}
+			}
+			&:nth-child(3){
+				&::before{
+					width: 21px;
+					height: 19px;
+					background: url(../img/contact/ico-email.png) no-repeat center/100%;
+				}
+			}
+		}
+	}
+	&__support{
+		&-ttl{
+			@include font-size(24);
+			line-height: 1.25;
+			font-weight: 700;
+			@include mq{
+				@include font-size(18);
+			}
+		}
+	}
+	&__left{
+		max-width: 479px;
+		@include mq(xl){
+			max-width: calc(100% - 560px);
+			padding-right: 30px;
+		}
+		@include mq(tb){
+			max-width: 479px;
+			margin-bottom: 60px;
+		}
+	}
+	&__right{
+		max-width: 560px;
+		width: 100%;
+		background: #fff;
+		padding: 48px;
+		border-radius: 24px;
+		@include mq{
+			padding: 25px 25px;
+		}
+		.recruitment-form{
+			border: none;
+			padding: 0;
+			margin: 0;
+			display: block;
+			&__input{
+				padding: 0;
+				margin-bottom: 18px;
+				border: none;
+			}
+			&__ttl{
+				@include mq{
+					@include font-size(24);
+				}
+			}
+			&__btn{
+				max-width: 100%;
+				@include smooth-transition;
+				&:hover{
+					opacity: .7;
+				}
+			}
+		}
+	}
+}
+
+
+.contact-map{
+	padding: 64px 0;
+	@include mq{
+		padding: 30px 0 64px;
+	}
+	&__wp{
+		@include aspect-ratio(1370, 675);
+		border-radius: 32px;
+		overflow: hidden;
+		@include mq{
+			@include aspect-ratio(335, 675);
+		}
+		iframe{
+			width: 100%;
+		}
+	}
+}

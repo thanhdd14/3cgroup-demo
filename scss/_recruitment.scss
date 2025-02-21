@@ -3,9 +3,12 @@
 .box-search{
 	max-width: 400px;
 	width: 100%;
-	margin: 0 auto;
+	margin: 190px auto 0;
 	position: relative;
-
+	@include mq{
+		margin-top: 50px;
+		max-width: 282px;
+	}
 	&__input{
 		background: #F4F4F4;
 		width: 100%;
@@ -35,18 +38,31 @@
 
 .recruitment-intro{
 	padding: 60px 0;
+	@include mq{
+		padding: 35px 0;
+	}
 	&__ttl{
 		@include font-size(70);
 		line-height: 1;
 		text-align: center;
 		font-weight: 700;
 		margin-bottom: 60px;
+		@include mq{
+			@include font-size(42);
+			margin-bottom: 36px;
+		}
 		span{
 			color: $green;
+			margin-right: 15px;
+			@include mq(tb){
+				display: block;
+				margin-right: 0;
+			}
 		}
 	}
 	&__slider{
 		.slick-dots{
+			bottom: 26px;
 			li{
 				margin: 0 4px;
 				button{
@@ -67,34 +83,62 @@
 		&-item{
 			border-radius: 24px;
 			overflow: hidden;
+			// @include aspect-ratio(296, 277);
+			// img{
+			// 	object-fit: cover;
+			// }
 		}
 	}
 }
 
 .recruitment-welfare{
+	padding-bottom: 120px;
+	@include mq(tb){
+		padding-bottom: 80px;
+	}
+	@include mq{
+		padding-bottom: 60px;
+	}
 	&__wp{
 		@include flex(0,0,wrap);
 	}
 	&__list{
 		width: 50%;
+		@include mq(tb){
+			width: 100%;
+		}
 		&-item{
-			padding: 20px;
+			padding: 15px 20px;
 			@include flex(0,0,wrap);
-			margin-bottom: 24px;
-			&:last-of-type{
-				margin-bottom: 0;
+			// margin-bottom: 24px;
+			// &:last-of-type{
+			// 	margin-bottom: 0;
+			// }
+			@include mq{
+				padding: 20px;
 			}
 		}
 		&-ico{
 			width: 64px;
+			@include mq{
+				width: 36px;
+			}
 		}
 		&-ct{
 			width: calc(100% - 64px);
 			padding-left: 32px;
 			@include fts(18,24);
 			font-weight: 500;
+			@include mq{
+				width: calc(100% - 36px);
+			}
 			p{
 				color: #797978;
+				margin-bottom: 20px;
+				font-weight: 400;
+				&:last-child{
+					margin-bottom: 0;
+				}
 			}
 		}
 		&-ttl{
@@ -102,9 +146,578 @@
 			@include font-size(24);
 			font-weight: 700;
 			margin-bottom: 10px;
+			@include mq{
+				@include fts(18,24);
+				font-weight: 500;
+			}
 		}
 	}
 	&__img{
 		width: 50%;
+		@include mq(tb){
+			display: none;
+		}
+		img{
+			margin-bottom: 25px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+.recruitment-future{
+	.inner{
+		@include mq{
+			padding: 0 30px;
+		}
+	}
+	&__img{
+		border-radius: 24px;
+		overflow: hidden;
+		@include mq{
+			img{
+				height: 526px;
+				-o-object-fit: cover;
+				object-fit: cover;
+				object-position: 78%;
+			}
+		}
+		@include mq(sm){
+			@include aspect-ratio(313, 321);
+			img{
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+	&__ct{
+		max-width: 711px;
+		width: 100%;
+		padding: 60px 52px;
+		border-radius: 24px;
+		background: $green;
+		color: #fff;
+		margin-top: -10vw;
+		position: relative;
+		z-index: 2;
+		margin-left: 50px;
+		color: #FFF6F6;
+		@include mq{
+			padding: 30px;
+			max-width: 89%;
+			margin: -120px auto 0;
+		}
+	}
+	&__ttl{
+		@include font-size(42);
+		line-height: 1.2;
+		font-weight: 700;
+		color: #fff;
+		margin-bottom: 16px;
+		@include mq{
+			@include font-size(24);
+		}
+	}
+}
+
+.recruitment-gallery{
+	padding: 128px 0;
+	@include mq{
+		padding: 64px 0;
+	}
+	&__slider{
+		margin: 0 -12px;
+		padding-bottom: 30px;
+		@include mq{
+			margin: 0 -8px;
+			padding-bottom: 20px;
+		}
+		&-item{
+			padding: 0 12px;
+			margin-bottom: 24px;
+			@include mq{
+				padding: 0 8px;
+				margin-bottom: 11px;
+			}
+		}
+		.slick-dots{
+			bottom: 0;
+			li{
+				margin: 0 4px;
+				@include mq{
+					margin: 0 2px;
+				}
+				button{
+					@include mq{
+						padding: 2px;
+					}
+					&::before{
+						border: none;
+						background: #C6C6C6;
+						@include mq{
+							width: 4px;
+							height: 4px;
+						}
+					}
+				}
+				&.slick-active{
+					button{
+						&::before{
+							background: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.recruitment-news{
+	padding-bottom: 140px;
+	@include mq(tb){
+		padding-bottom: 100px;
+	}
+	@include mq{
+		padding-bottom: 64px;
+	}
+	.inner{
+		@include mq{
+			padding: 0 30px;
+		}
+	}
+	&__ttl{
+		text-align: left;
+		color: #797978;
+		margin-bottom: 47px;
+		@include mq{
+			padding: 0 6px;
+			margin-bottom: 36px;
+		}
+	}
+	&__list{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 30px;
+		margin-bottom: 50px;
+		@include mq(sm){
+			grid-template-columns: 1fr;
+			gap: 24px;
+			margin-bottom: 64px;
+		}
+		&-item{
+			border: 1px solid #D9D9D9;
+			border-radius: 24px;
+			padding: 32px 32px;
+			box-shadow: 0 16px 40px rgba(#585C5F, 0.16);
+			@include mq{
+				padding: 24px 18px;
+			}
+		}
+		&-ttl{
+			color: $green;
+			font-weight: 700;
+			@include font-size(24);
+			margin-bottom: 14px;
+		}
+		&-ct{
+			margin-bottom: 30px;
+			color: #303030;
+			font-weight: 500;
+			@include mq{
+				margin-bottom: 18px;
+			}
+		}
+	}
+	&__btn{
+		width: 150px;
+		height: 36px;
+		@include flex(center, center);
+		margin-left: auto;
+		margin-right: 0;
+		@include font-size(14);
+		color: #000;
+		background: #D9D9D9;
+		border: none;
+		@include mq{
+			margin: 0 auto;
+		}
+	}
+}
+
+
+
+
+
+.recruitment-detail{
+	padding-top: 160px;
+	padding-bottom: 126px;
+	@include mq{
+		padding-top: 30px;
+		padding-bottom: 64px;
+	}
+	.inner{
+		@include flex(0,start,wrap);
+	}
+	&__sidebar{
+		width: 32.26%;
+		border: 1px solid #D9D9D9;
+		border-radius: 24px;
+		padding: 24px 24px;
+		@include mq(tb){
+			padding: 24px 6px;
+		}
+		@include mq{
+			order: 2;
+			width: 100%;
+			margin-top: 64px;
+			padding: 32px 14px;
+		}
+		&-ttl{
+			@include font-size(24);
+			font-weight: 700;
+			margin-bottom: 27px;
+			color: #797978;
+		}
+		&-list{
+			li{
+				border-bottom: 1px solid #C6C6C6;
+				a{
+					padding: 20px 0;
+					@include font-size(32);
+					font-weight: 700;
+					color: #797978;
+					display: block;
+					@include mq(tb){
+						@include font-size(24);
+					}
+				}
+				&:first-child{
+					border-top: 1px solid #C6C6C6;
+				}
+				&:last-of-type{
+					border-bottom: none;
+					a{
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	&__content{
+		width: calc(100% - 32.26%);
+		padding-left: 15px;
+		@include mq{
+			width: 100%;
+			padding-left: 0;
+		}
+		&-ttl{
+			@include font-size(24);
+			font-weight: 700;
+			margin-bottom: 30px;
+			@include mq(tb){
+				@include font-size(20);
+			}
+			@include mq{
+				@include font-size(18);
+			}
+			span{
+				color: $green;
+				@include font-size(42);
+				line-height: 1.15;
+				display: block;
+				@include mq(tb){
+					@include font-size(32);
+					margin-bottom: 18px;
+				}
+			}
+		}
+		&-ttlsub{
+			color: #797978;
+			@include font-size(24);
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+		&-list{
+			li{
+				color: #797978;
+				position: relative;
+				padding-left: 15px;
+				@include p-before(4px, 4px){
+					background: #797978;
+					top: 8px;
+					left: 0;
+					border-radius: 2px;
+				}
+			}
+		}
+	}
+	&__wp{
+		border: 1px solid #D9D9D9;
+		padding: 46px;
+		border-radius: 24px;
+		margin-bottom: 36px;
+		@include mq(tb){
+			padding: 40px 22px;
+		}
+		@include mq{
+			padding: 48px 22px;
+		}
+	}
+	&__btn{
+		@include mq{
+			max-width: 335px;
+			height: 64px;
+			border-radius: 30px;
+			@include font-size(21.24);
+			margin: 0 auto;
+		}
+	}
+}
+
+.file-name {
+    position: absolute;
+    left: 132px;
+    padding-left: 10px;
+    top: 0;
+    background: #fff;
+	height: 36px;
+    @include flex(center, center);
+    font-size: 1.8rem;
+	font-weight: 500;
+}
+.recruitment-form{
+	border: 1px solid #D9D9D9;
+	border-radius: 24px;
+	padding: 44px 47px;
+	margin-top: 36px;
+	color: #797978;
+	display: none;
+	@include mq{
+		padding: 24px 40px;
+		margin-top: 34px;
+	}
+	&__ttl{
+		@include font-size(24);
+		font-weight: 700;
+		@include mq{
+			@include font-size(32);
+		}
+	}
+	&__intro{
+		margin-bottom: 24px;
+	}
+	&__input{
+		@include flex(between,0,wrap);
+		gap: 24px 0;
+		padding-bottom: 24px;
+		margin-bottom: 24px;
+		border-bottom: 1px solid #C6C6C6;
+		
+		.form-control{
+			width: calc((100% - 20px)/2);
+			@include mq{
+				width: 100%;
+			}
+			&--full{
+				width: 100%;
+			}
+		}
+		&-phone{
+			width: 100%;
+			position: relative;
+			select{
+				width: 62px;
+				height: 28px;
+				@include font-size(18);
+				font-weight: 500;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 24px;
+				color: #797978;
+				border: none;
+				border-right: 1px solid #797978;
+				background: url(../img/recruitment/ico-down.png) no-repeat center right/24px 12px;
+				cursor: pointer;
+				@include mq{
+					width: 55px;
+					@include font-size(14);
+					left: 12px;
+				}
+			}
+			.form-control{
+				width: 100%;
+				padding-left: 100px;
+				@include mq{
+					padding-left: 75px;
+					padding-right: 15px;
+				}
+			}
+		}
+
+		&-textarea{
+			width: 100%;
+			.form-control{
+				width: 100%;
+				height: 246px;
+				resize: none;
+				padding: 20px 24px;
+			}
+		}
+	}
+	&__file{
+		color: #797978;
+		dl{
+			margin-bottom: 24px;
+			dt{
+				margin-bottom: 8px;
+				@include mq{
+					@include font-size(18);
+					font-weight: 500;
+				}
+			}
+			dd{
+				position: relative;
+				input[type="file"]{
+					position: absolute;
+					width: 132px;
+					top: 0;
+					left: 0;
+					pointer-events: none;
+					outline: none;
+					box-shadow: none;
+					z-index: 10;
+					height: 36px;
+					opacity: 0;
+				}
+			}
+		}
+		&-note{
+			margin-top: 8px;
+			&--portfolio{
+				&.file-added{
+					margin-top: 45px;
+					& + .file-name{
+						top: 39px;
+						width: 100%;
+						text-align: center;
+						left: 0;
+					}
+				}
+			}
+			
+		}
+	}
+
+	&__btn{
+		@include mq{
+			max-width: 253px;
+			height: 58px;
+			@include font-size(24);
+			margin: 0 auto;
+		}
+	}
+}
+
+.required{
+	color: #FB3748;
+}
+
+.custom-file-upload{
+	width: 132px;
+	height: 36px;
+	border-radius: 24px;
+	border: 1px solid #D9D9D9;
+	cursor: pointer;
+	@include flex(center, center);
+	@include mq{
+		font-weight: 500;
+	}
+	&--full{
+		width: 100%;
+		& + input[type="file"]{
+			width: 100%;
+		}
+	}
+}
+
+.form-control{
+	width: 100%;
+	height: 48px;
+	border: 1px solid #D9D9D9;
+	border-radius: 24px;
+	padding: 0 15px;
+	@include font-size(18);
+	font-weight: 500;
+	@include mq{
+		padding: 0 24px;
+		@include font-size(14);
+		font-weight: 400;
+	}
+}
+
+.bg-overlay{
+	@include p-after(100%, 100%){
+		top: 0;
+		left: 0;
+		position: fixed;
+		background: rgba(#000, 0.5);
+		z-index: 1000;
+	}
+}
+
+.modal-complete{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include flex(center, center);
+	opacity: 0;
+	visibility: hidden;
+	@include smooth-transition;
+	z-index: 1001;
+	&.is-show{
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	&__wp{
+		max-width: 492px;
+		background: #fff;
+		border-radius: 24px;
+		padding: 45px 50px;
+		position: relative;
+		z-index: 10;
+		@include mq{
+			max-width: 336px;
+			padding: 48px 25px;
+		}
+	}
+	&__main{
+		text-align: center;
+		&-ico{
+			margin-bottom: 15px;
+		}
+		&-ttl{
+			text-align: center;
+			color: $green;
+			@include fts(24, 30);
+			font-weight: 700;
+			margin-bottom: 15px;
+		}
+		&-btn{
+			width: 36px;
+			height: 36px;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			border: none;
+			background: none;
+			cursor: pointer;
+			padding: 0;
+		}
 	}
 }

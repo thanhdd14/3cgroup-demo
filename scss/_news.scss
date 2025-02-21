@@ -12,6 +12,23 @@
 			position: static;
 		}
 	}
+	.ttl-page{
+		display: block;
+		text-transform: uppercase;
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		padding: 0 19vw 0 0;
+		@include v-align;
+		font-size: clamp(3.2rem,4.791vw,9.2rem);
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		@include mq(){
+			top: 62%;
+			text-align: left;
+		}
+	}
 }
 .mv-banner{
 	img{
@@ -56,6 +73,11 @@
 		@include font-size(24);
 		position: relative;
 		padding: 0 24px 0 0;
+		@include mq(){
+			@include font-size(18);
+			font-weight: 500;
+			padding: 0 35px 0 0;
+		}
 		&:after{
 			content: "";
 			border: solid white;
@@ -68,6 +90,9 @@
 			position: absolute;
 			top: 10px;
 			right: 0;
+			@include mq(){
+				top: 6px;
+			}
 		}
 	}
 }
