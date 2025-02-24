@@ -9,8 +9,7 @@ reset style
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: 10px;
-  /* Base font size, change to 14px or 16px if needed */
+  font-size: 10px; /* Base font size, change to 14px or 16px if needed */
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1142,7 +1141,6 @@ a {
   text-decoration: none;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 a:hover {
@@ -1230,7 +1228,6 @@ a:hover {
 @media screen and (min-width: 835px) {
   .u-fn-hover {
     -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
     transition: all 0.2s;
   }
   .u-fn-hover:hover {
@@ -1486,7 +1483,6 @@ Component
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -1521,7 +1517,6 @@ Component
   flex-wrap: wrap;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1024px) {
@@ -1621,7 +1616,6 @@ Component
   content: "";
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
-  -o-transition: transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 3px;
@@ -1775,7 +1769,6 @@ Component
     position: absolute;
     -webkit-backface-visibility: hidden;
     -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     content: "";
     width: 0;
@@ -1940,7 +1933,6 @@ Component
   content: "";
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
-  -o-transition: transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 3px;
@@ -2577,6 +2569,11 @@ Component
   .recruitment-intro__ttl span {
     display: block;
     margin-right: 0;
+  }
+}
+@media screen and (max-width: 834px) {
+  .recruitment-intro__slider {
+    padding: 0 25px;
   }
 }
 .recruitment-intro__slider .slick-dots {
@@ -3333,7 +3330,6 @@ Component
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1001;
 }
@@ -3548,7 +3544,6 @@ Component
   padding: 5px 15px;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .tab-menu li:last-child {
@@ -4044,7 +4039,6 @@ Component
   max-width: 100%;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .contact-page__right .recruitment-form__btn:hover {
