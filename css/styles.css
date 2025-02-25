@@ -9,7 +9,8 @@ reset style
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: 10px; /* Base font size, change to 14px or 16px if needed */
+  font-size: 10px;
+  /* Base font size, change to 14px or 16px if needed */
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1141,6 +1142,7 @@ a {
   text-decoration: none;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 a:hover {
@@ -1228,6 +1230,7 @@ a:hover {
 @media screen and (min-width: 835px) {
   .u-fn-hover {
     -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
   }
   .u-fn-hover:hover {
@@ -1483,6 +1486,7 @@ Component
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -1517,6 +1521,7 @@ Component
   flex-wrap: wrap;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1024px) {
@@ -1616,6 +1621,7 @@ Component
   content: "";
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 3px;
@@ -1769,6 +1775,7 @@ Component
     position: absolute;
     -webkit-backface-visibility: hidden;
     -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     content: "";
     width: 0;
@@ -1933,6 +1940,7 @@ Component
   content: "";
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 3px;
@@ -2500,6 +2508,56 @@ Component
     font-size: 1.8rem;
     line-height: 1.3333333333;
     margin-bottom: 0;
+  }
+}
+.news-list--other {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.news-list--other .news-list__item {
+  width: calc(50% - 15px);
+}
+@media screen and (max-width: 834px) {
+  .news-list--other .news-list__item {
+    width: 100%;
+  }
+}
+.news-list--other .news-list__img {
+  width: 136px;
+}
+.news-list--other .news-list__img:before {
+  padding: 100% 0 0;
+}
+@media screen and (max-width: 834px) {
+  .news-list--other .news-list__img {
+    display: none;
+  }
+}
+.news-list--other .news-list__ct {
+  width: calc(100% - 136px);
+  padding: 0 0 0 20px;
+}
+@media screen and (max-width: 834px) {
+  .news-list--other .news-list__ct {
+    width: 100%;
+    padding: 0;
+  }
+}
+.news-list--other .news-list__ct-ttl {
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+@media screen and (max-width: 834px) {
+  .news-list--other .news-list__ct-ttl {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.3333333333;
   }
 }
 
@@ -3330,6 +3388,7 @@ Component
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1001;
 }
@@ -3544,6 +3603,7 @@ Component
   padding: 5px 15px;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .tab-menu li:last-child {
@@ -3563,6 +3623,126 @@ Component
 }
 .tab-content__item.active {
   display: block;
+}
+
+.sec-article {
+  padding: 150px 0 50px;
+}
+@media screen and (max-width: 834px) {
+  .sec-article {
+    padding: 100px 0 50px;
+  }
+}
+.sec-article .inner {
+  max-width: 1230px;
+}
+
+.article-block {
+  font-size: 1.8rem;
+  line-height: 1.3333333333;
+  font-weight: 500;
+  color: #797978;
+  max-width: 777px;
+  margin: 0 auto 80px;
+}
+@media screen and (max-width: 834px) {
+  .article-block {
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+    margin-bottom: 40px;
+  }
+}
+.article-block h1, .article-block h2, .article-block h3, .article-block h4, .article-block h5, .article-block h6 {
+  display: block;
+  font-weight: bold;
+}
+.article-block img {
+  border-radius: 20px;
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+.article-block__date {
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 834px) {
+  .article-block__date {
+    font-size: 1.8rem;
+  }
+}
+.article-block__note {
+  background: #F2FFE8;
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: black;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 834px) {
+  .article-block__note {
+    font-size: 1rem;
+  }
+}
+.article-block__note-ttl {
+  display: block;
+  width: 100px;
+}
+@media screen and (max-width: 834px) {
+  .article-block__note-ttl {
+    width: 60px;
+  }
+}
+.article-block__note-ct {
+  width: calc(100% - 100px);
+}
+@media screen and (max-width: 834px) {
+  .article-block__note-ct {
+    width: calc(100% - 60px);
+  }
+}
+.article-block__note-ct ul li a {
+  display: block;
+  color: #5188E6;
+}
+.article-block h1 {
+  font-size: 4.2rem;
+  line-height: 1.1428571429;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 834px) {
+  .article-block h1 {
+    font-size: 3.2rem;
+    line-height: 1.1875;
+    text-align: center;
+  }
+}
+.article-block h2 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 834px) {
+  .article-block h2 {
+    font-size: 2.4rem;
+  }
+}
+.article-block h3 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+.article-block p {
+  margin-bottom: 15px;
+}
+.article-block small {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 @media screen and (max-width: 834px) {
@@ -4039,6 +4219,7 @@ Component
   max-width: 100%;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .contact-page__right .recruitment-form__btn:hover {

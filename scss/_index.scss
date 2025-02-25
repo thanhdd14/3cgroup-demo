@@ -248,4 +248,39 @@
 			}
 		}
 	}
+	&--other{
+		@include flex(between,0,wrap);
+		.news-list{
+			&__item{
+				width: calc(50% - 15px);
+				@include mq(){
+					width: 100%;
+				}
+			}
+			&__img{
+				width: 136px;
+				&:before{
+					padding: 100% 0 0;
+				}
+				@include mq(){
+					display: none;
+				}
+			}
+			&__ct{
+				width: calc(100% - 136px);
+				padding: 0 0 0 20px;
+				@include mq(){
+					width: 100%;
+					padding: 0;
+				}
+				&-ttl{
+					@include fts(24,30);
+					@include mq(){
+						font-weight: 500;
+						@include fts(18,24);
+					}
+				}
+			}
+		}
+	}
 }
